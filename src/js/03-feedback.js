@@ -19,12 +19,16 @@ function onFormInput(event) {
 }
 
 function onFormSubmit(event) {
+  if (!inputEmail.value || !textareaMessage.value) {
+    alert(`Неможливо виконвти Ваш запит!\n\Будь ласка, заповніть усі поля форми`);
+    return;
+  }
+
   event.preventDefault();  
   event.target.reset();
 
-  localStorage.removeItem(LOCALSTORAGE_KEY);
-
   console.log(dataForm);
+  localStorage.removeItem(LOCALSTORAGE_KEY);  
 }
 
 function populateForm() {
@@ -33,10 +37,13 @@ function populateForm() {
   if (savedData) {
     if (savedData.message) {
       textareaMessage.value = savedData.message;
+      dataForm.message = savedData.message;
     }
 
     if (savedData.email) {
       inputEmail.value = savedData.email;
+      dataForm.email = savedData.email;
     }
   }
 }
+
