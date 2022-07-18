@@ -20,7 +20,7 @@ function onFormInput(event) {
 
 function onFormSubmit(event) {
   if (!inputEmail.value || !textareaMessage.value) {
-    alert(`Неможливо виконвти Ваш запит!\n\Будь ласка, заповніть усі поля форми`);
+    alert(`Неможливо виконати Ваш запит!\n\Будь ласка, заповніть усі поля форми`);
     return;
   }
 
