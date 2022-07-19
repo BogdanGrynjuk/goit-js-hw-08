@@ -28,7 +28,11 @@ function onFormSubmit(event) {
   event.target.reset();
 
   console.log(dataForm);
-  localStorage.removeItem(LOCALSTORAGE_KEY);  
+  localStorage.removeItem(LOCALSTORAGE_KEY);
+  
+  for (const key in dataForm) {
+    delete dataForm[key];
+  }
 }
 
 function populateForm() {
@@ -46,4 +50,6 @@ function populateForm() {
     }
   }
 }
+
+
 
